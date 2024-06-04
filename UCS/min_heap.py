@@ -1,6 +1,6 @@
 import time
 
-class Max_Heap:
+class Min_Heap:
     def __init__(self):
         self.heap = []
 
@@ -15,7 +15,7 @@ class Max_Heap:
         while True:
             #print("ci: ", child_index, " pi: ", parent_index)
             #print(self.heap)
-            if self.heap[child_index] < self.heap[parent_index]:
+            if self.heap[child_index][1] > self.heap[parent_index][1] :
                 #swap them
                 self.heap[child_index], self.heap[parent_index] = self.heap[parent_index], self.heap[child_index]
             
@@ -32,26 +32,31 @@ class Max_Heap:
         parent_index = 0
         left_child_index = 2*parent_index + 1
         right_child_index = 2*parent_index + 2
-        max_child_index = parent_index
+        min_child_index = parent_index
+
+        if left_child_index >= self.get_size():
+            left_child_index = self.get_size() - 1
+        if right_child_index >= self.get_size():
+            right_child_index = self.get_size() - 1
 
         while True:
-            #print("pi: ", parent_index, " lci: ", left_child_index, " rci: ", right_child_index, " size: ", self.get_size())
-            #print(self.heap)
+            print("pi: ", parent_index, " lci: ", left_child_index, " rci: ", right_child_index, " size: ", self.get_size())
+            print(self.heap)
             #time.sleep(1)
-            if self.heap[left_child_index] < self.heap[right_child_index] and self.heap[parent_index] < self.heap[right_child_index]:
+            if self.heap[left_child_index][1]  > self.heap[right_child_index][1] and self.heap[parent_index][1] > self.heap[right_child_index][1]:
                 #swap parent with right child
-                max_child_index = right_child_index
+                min_child_index = right_child_index
 
-            if self.heap[left_child_index] > self.heap[right_child_index] and self.heap[left_child_index] > self.heap[parent_index]:
+            if self.heap[left_child_index][1] < self.heap[right_child_index][1] and self.heap[left_child_index][1] < self.heap[parent_index][1]:
                 #swap with right child
-                max_child_index = left_child_index
+                min_child_index = left_child_index
             
-            self.heap[max_child_index], self.heap[parent_index] = self.heap[parent_index], self.heap[max_child_index]
+            self.heap[min_child_index], self.heap[parent_index] = self.heap[parent_index], self.heap[min_child_index]
             
-            if max_child_index == parent_index:
+            if min_child_index == parent_index:
                 break
 
-            parent_index = max_child_index
+            parent_index = min_child_index
             left_child_index = 2*parent_index + 1
             right_child_index = 2*parent_index + 2
 
@@ -71,6 +76,7 @@ class Max_Heap:
         #print(self.heap)
 
     def dequue(self):
+        print("len: ", self.get_size())
         if self.get_size() == 0:
             print("There is no data")
         elif self.get_size() == 1:
@@ -83,27 +89,30 @@ class Max_Heap:
             self.reheap_down()
             #print(self.heap)
             return tmp
+        
+    def __str__(self):
+        return str(self.heap)
 
 
-queue = Max_Heap()
-queue.enqueue(4)
-queue.enqueue(12)
-queue.enqueue(88)
-queue.enqueue(9)
-queue.enqueue(43)
-queue.enqueue(25)
-queue.enqueue(77)
-queue.enqueue(61)
-queue.enqueue(70)
-queue.enqueue(31)
-queue.enqueue(33)
+# queue = Min_Heap()
+# queue.enqueue(('s',4))
+# queue.enqueue(('a',5))
+# queue.enqueue(('d', 88))
+# queue.enqueue(('f', 96))
+# queue.enqueue(('g',2))
+# queue.enqueue(('h',645))
+# queue.enqueue(('j', 87))
+# queue.enqueue(('k',61))
+# queue.enqueue(('l',70))
+# queue.enqueue(('z',31))
+# queue.enqueue(('x', 33))
 
 
-print(queue.dequue())
-print(queue.dequue())
-print(queue.dequue())
-print(queue.dequue())
-print(queue.dequue())
+# print(queue.dequue())
+# print(queue.dequue())
+# print(queue.dequue())
+# print(queue.dequue())
+# print(queue.dequue())
 
 
 
