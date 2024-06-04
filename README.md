@@ -1,15 +1,15 @@
-Reading from File
-Stack
-Circular Queue
-Plain Queue
-Max Heap
-Min Heap
-BFS
-DFS
-UCS
-A*
-MiniMax
-Alpha Beta Pruning MiniMax
-Expectimax
-MDP Value iteration
-CSP 
+Reading from File <br>
+Stack <br>
+Circular Queue<br>
+Plain Queue<br>
+Max Heap<br>
+Min Heap<br>
+BFS<br>
+DFS<br>
+UCS<br>
+A*<br>
+MiniMax<br>
+Alpha Beta Pruning MiniMax<br>
+Expectimax<br>
+MDP Value iteration<br>
+CSP <br>
