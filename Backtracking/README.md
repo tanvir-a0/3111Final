@@ -1,1 +1,2 @@
-According to the class lecture.
+According to the class lecture.<br><br>
+https://www.canva.com/design/DAGHQLMoCuA/cruc13H82EPfpMdLuVXV4w/edit?utm_content=DAGHQLMoCuA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton (Here is the all possible case graph)
