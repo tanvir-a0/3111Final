@@ -1,5 +1,3 @@
-import time
-
 graph = {
     '0': ['1','2','3'],
     '1': ['0','2'],
@@ -23,7 +21,6 @@ def is_corroect(vertex, color, graph, color_assignment):
     return True
     
 def graphColoringBT(graph, color_assignment, vertex):
-    #time.sleep(2)
     print(color_assignment)
     print(vertex)
     if (len(color_assignment) == len(graph)):
